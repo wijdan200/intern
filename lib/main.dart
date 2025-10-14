@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_ex/Homepage.dart';
-import 'package:flutter_ex/tran.dart';
+import 'package:flutter_ex/view/Homepage.dart';
+import 'package:flutter_ex/Controller/tran.dart';
 import 'package:get/get.dart';
 
 void main() {

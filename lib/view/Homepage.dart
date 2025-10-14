@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ex/Second.dart';
+import 'package:flutter_ex/view/Second.dart';
 import 'package:get/get.dart';
 
 // class Controller extends GetxController {

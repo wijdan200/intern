@@ -31,3 +31,4 @@ class MyTranslations extends Translations {
       };
       
 }
+
