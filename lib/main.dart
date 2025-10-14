@@ -10,6 +10,12 @@ void main() {
     translations: MyTranslations(),      
     locale: Get.deviceLocale,             
     fallbackLocale: Locale('en', 'US'),    
+    theme: ThemeData.light(),            
+    darkTheme: ThemeData.dark(),          
+    themeMode: ThemeMode.light,  
+   
+   
+   
     home: Homepage(),
   ));
 }
