@@ -46,7 +46,7 @@ class Homepage extends StatelessWidget {
             ElevatedButton(
               child: Text('Next_Route'.tr),
               onPressed: () {
-                Get.to(() => Second());
+                Get.toNamed('/second');
               },
             ),
             SizedBox(height: 20),
