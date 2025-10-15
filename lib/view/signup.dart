@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_ex/Controller/auth_service.dart';
 
+
 class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
@@ -11,14 +12,14 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   final _formKey = GlobalKey<FormState>();
-  final _nameCtrl = TextEditingController();
+  // final _nameCtrl = TextEditingController();
   final _emailCtrl = TextEditingController();
   final _passwordCtrl = TextEditingController();
   bool _isLoading = false;
 
   @override
   void dispose() {
-    _nameCtrl.dispose();
+    // _nameCtrl.dispose();
     _emailCtrl.dispose();
     _passwordCtrl.dispose();
     super.dispose();
@@ -31,16 +32,17 @@ class _SignupPageState extends State<SignupPage> {
      //var to auth info 
      //trim()>> to remove the spaces from start & end 
      final res = await auth.register(
-      name: _nameCtrl.text.trim(),
+      // name: _nameCtrl.text.trim(),
       email: _emailCtrl.text.trim(),
-      password: _passwordCtrl.text,
+      password: _passwordCtrl.text, name: '',
     );
     setState(() => _isLoading = false);
     if (res.isOk) {
       Get.snackbar('Success', 'Account created');
       Get.offAllNamed('/login');
     } else {
-      Get.snackbar('Error', res.statusText ?? 'Registration failed');
+      // final msg = ErrorUtils.extractErrorMessage(res);
+      // Get.snackbar('Error', msg);
     }
   }
 
@@ -54,11 +56,11 @@ class _SignupPageState extends State<SignupPage> {
           key: _formKey,
           child: Column(
             children: [
-              TextFormField(
-                controller: _nameCtrl,
-                decoration: const InputDecoration(labelText: 'Name'),
-                validator: (v) => (v == null || v.trim().isEmpty) ? 'Required' : null,
-              ),
+              // TextFormField(
+              //   controller: _nameCtrl,
+              //   decoration: const InputDecoration(labelText: 'Name'),
+              //   validator: (v) => (v == null || v.trim().isEmpty) ? 'Required' : null,
+              // ),
               const SizedBox(height: 12),
               TextFormField(
                 controller: _emailCtrl,

@@ -8,8 +8,6 @@ import 'package:flutter_ex/Controller/tran.dart';
 import 'package:flutter_ex/Controller/auth_service.dart';
 import 'package:flutter_ex/Controller/auth_middleware.dart';
 import 'package:get/get.dart';
-
-
 // sharedPreferences? sharepref;
 
 

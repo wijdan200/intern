@@ -32,6 +32,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_ex/Controller/auth_service.dart';
 
+
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -137,10 +138,18 @@ class LoginPage extends StatelessWidget {
                       ),
                       elevation: 3,
                     ),
-                    onPressed: () {
+                    onPressed: () async {
                       if (formKey.currentState?.validate() != true) return;
-                      auth.login();
-                      Get.offAllNamed('/second'); 
+                      final res = await auth.loginWithApi(
+                        email: 'wjdanalnbyh8@gmail.com',
+                        password: 'kjkjkjk',
+                      );
+                      if (res.isOk) {
+                        Get.offAllNamed('/second');
+                      } else {
+                        // final msg = ErrorUtils.extractErrorMessage(res);
+                        // Get.snackbar('Error', msg);
+                      }
                     },
                     child: const Text(
                       'Sign In',

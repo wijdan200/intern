@@ -20,7 +20,16 @@ class AuthService extends GetxService {
   }
 
   Future<Response<dynamic>> register({required String name, required String email, required String password}) async {
-    return _api.register( email: email, password: password, name: '');
+    return _api.register(email: email, password: password, name: name);
+  }
+
+  Future<Response<dynamic>> loginWithApi({required String email, required String password}) async {
+    final res = await _api.login(email: email, password: password);
+    if (res.isOk) {
+      // No token required in new auth; treat 2xx as success
+      isLoggedIn.value = true;
+    }
+    return res;
   }
 }
 
