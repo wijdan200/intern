@@ -19,8 +19,8 @@ class AuthService extends GetxService {
     isLoggedIn.value = false;
   }
 
-  Future<Response> register({required String name, required String email, required String password}) async {
-    return _api.register(name: name, email: email, password: password);
+  Future<Response<dynamic>> register({required String name, required String email, required String password}) async {
+    return _api.register( email: email, password: password, name: '');
   }
 }
 

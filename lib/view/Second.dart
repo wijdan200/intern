@@ -37,11 +37,11 @@ class Second extends StatelessWidget {
               child: const Text('Increase Count'),
             ),
             const SizedBox(height: 20),
-            ElevatedButton(
+            ElevatedButton( child: const Text('Go Back'),
               onPressed: () {
-                Get.back();
+                Get.toNamed('/Second');
               },
-              child: const Text('Go Back'),
+          
             ),
           ],
         ),

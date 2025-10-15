@@ -1,4 +1,5 @@
-import 'package@get/get.dart';
+import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/response/response.dart';
 
 class ApiClient extends GetConnect {
   @override
@@ -8,14 +9,13 @@ class ApiClient extends GetConnect {
     super.onInit();
   }
 
-  Future<Response> register({required String name, required String email, required String password}) {
+  Future<Response<dynamic>> register({required String name, required String email, required String password}) {
     final body = {
-      'name': name,
+      // 'name': name,
       'email': email,
       'password': password,
     };
     return post('/auth/register', body);
   }
 }
-
 
