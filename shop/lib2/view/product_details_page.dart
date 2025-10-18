@@ -10,7 +10,15 @@ class ProductDetailsPage extends StatelessWidget {
     final Product product = Get.arguments as Product;
 
     return Scaffold(
-    
+      appBar: AppBar(
+        title: const Text('Product Details'),
+        backgroundColor: const Color(0xFF6A4C93),
+        foregroundColor: Colors.white,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Get.back(),
+        ),
+      ),
       body: SingleChildScrollView(
         
         child: Column(

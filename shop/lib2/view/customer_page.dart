@@ -15,12 +15,12 @@ class CustomerPage extends StatelessWidget {
         title: const Text('Shop - Products'),
         backgroundColor: const Color(0xFF6A4C93),
         foregroundColor: Colors.white,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.refresh),
-            onPressed: () => controller.refreshProducts(),
-          ),
-        ],
+       
+          leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Get.back(),
+        ),
+       
       ),
       body: Obx(() {
         if (controller.isLoading.value) {

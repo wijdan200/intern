@@ -82,7 +82,7 @@ class LoginUser extends StatelessWidget {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
-                          Icon(Icons.shopping_cart, size: 24),
+                          Icon(Icons.shopping_cart, size: 20),
                           SizedBox(width: 8),
                           Text(
                             'Customer',
