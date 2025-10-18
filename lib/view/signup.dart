@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_ex/Controller/auth_service.dart';
 
 
 class SignupPage extends StatefulWidget {
@@ -28,22 +27,10 @@ class _SignupPageState extends State<SignupPage> {
   Future<void> _submit() async {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isLoading = true);
-    final auth = Get.find<AuthService>();
-     //var to auth info 
-     //trim()>> to remove the spaces from start & end 
-     final res = await auth.register(
-      // name: _nameCtrl.text.trim(),
-      email: _emailCtrl.text.trim(),
-      password: _passwordCtrl.text, name: '',
-    );
+    // TODO: Implement signup logic
+    await Future.delayed(const Duration(seconds: 1)); // Simulate API call
+    Get.snackbar('Info', 'Signup functionality not implemented yet');
     setState(() => _isLoading = false);
-    if (res.isOk) {
-      Get.snackbar('Success', 'Account created');
-      Get.offAllNamed('/login');
-    } else {
-      // final msg = ErrorUtils.extractErrorMessage(res);
-      // Get.snackbar('Error', msg);
-    }
   }
 
   @override
@@ -101,5 +88,4 @@ class _SignupPageState extends State<SignupPage> {
     );
   }
 }
-
 

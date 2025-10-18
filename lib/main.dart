@@ -1,19 +1,14 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_ex/view/Homepage.dart';
 import 'package:flutter_ex/view/Second.dart';
 import 'package:flutter_ex/view/login.dart';
 import 'package:flutter_ex/view/signup.dart';
 import 'package:flutter_ex/Controller/tran.dart';
-import 'package:flutter_ex/Controller/auth_service.dart';
 import 'package:flutter_ex/Controller/auth_middleware.dart';
 import 'package:get/get.dart';
-// sharedPreferences? sharepref;
 
-
-void main() async {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  await Get.putAsync<AuthService>(() async => AuthService().init());
 
   runApp(GetMaterialApp(
     debugShowCheckedModeBanner: false,
@@ -31,20 +26,12 @@ void main() async {
         page: () => Second(),
         middlewares: [AuthMiddleware()],
       ),
-      GetPage(name: '/login', page: () => const LoginPage()),
-      GetPage(name: '/signup', page: () => const SignupPage()),
+      GetPage(name: '/login', page: () => LoginPage()),
+      GetPage(name: '/signup', page: () => SignupPage()),
     ],
   ));
 }
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
 
 
 

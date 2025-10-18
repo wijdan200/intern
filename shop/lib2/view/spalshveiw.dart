@@ -4,11 +4,9 @@ import '../controllers/splash_controller.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
-
   @override
   Widget build(BuildContext context) {
     Get.put(SplashController());
-
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -18,26 +16,21 @@ class SplashView extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        child: const Center(
+        child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.shopping_bag_outlined,
-                size: 100,
-                color: Colors.white,
-              ),
-              SizedBox(height: 20),
-              Text(
-                'Welcome to BagShop',
+              // Image.asset("images/background.jpg", fit: BoxFit.cover),
+              const SizedBox(height: 20),
+              const Text(
+                'Welcome to Our Shop',
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
               ),
-              SizedBox(height: 10),
-             
+              const SizedBox(height: 10),
             ],
           ),
         ),
@@ -45,4 +38,3 @@ class SplashView extends StatelessWidget {
     );
   }
 }
-           

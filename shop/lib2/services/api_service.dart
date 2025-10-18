@@ -9,7 +9,7 @@ class ApiService extends GetConnect {
     super.onInit();
   }
 
-  // Get all products
+ 
   Future<List<Product>> getProducts() async {
     try {
       final response = await get('/products');

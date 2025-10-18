@@ -1,36 +1,6 @@
-// import 'package:flutter/material.dart';
-// import 'package:get/get.dart';
-// import 'package:flutter_ex/Controller/auth_service.dart';
-
-// class LoginPage extends StatelessWidget {
-//   const LoginPage({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final auth = Get.find<AuthService>();
-//     return Scaffold(
-//       appBar: AppBar(title: const Text('Login')),
-//       body: Center(
-//         child: ElevatedButton(
-//           onPressed: () {
-//             auth.login();
-//             Get.offAllNamed('/');
-//           },
-//           child: const Text('Sign In')
-          
-          
-          
-//           ,
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_ex/Controller/auth_service.dart';
+
 
 
 class LoginPage extends StatelessWidget {
@@ -38,7 +8,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final auth = Get.find<AuthService>();
+    // final auth = Get.find<AuthService>();
 
     // Controllers
     final TextEditingController emailController = TextEditingController();
@@ -140,16 +110,9 @@ class LoginPage extends StatelessWidget {
                     ),
                     onPressed: () async {
                       if (formKey.currentState?.validate() != true) return;
-                      final res = await auth.loginWithApi(
-                        email: 'wjdanalnbyh8@gmail.com',
-                        password: 'kjkjkjk',
-                      );
-                      if (res.isOk) {
-                        Get.offAllNamed('/second');
-                      } else {
-                        // final msg = ErrorUtils.extractErrorMessage(res);
-                        // Get.snackbar('Error', msg);
-                      }
+                      // TODO: Implement login logic
+                      Get.snackbar('Info', 'Login functionality not implemented yet');
+                      // Get.offAllNamed('/second');
                     },
                     child: const Text(
                       'Sign In',

@@ -13,12 +13,17 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
   runApp(GetMaterialApp(
-    title: 'BagShop',
+    title: 'Shop',
     debugShowCheckedModeBanner: false,
-    theme: ThemeData(
+    theme: ThemeData.light().copyWith(
       colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6A4C93)),
       useMaterial3: true,
     ),
+    darkTheme: ThemeData.dark().copyWith(
+      colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6A4C93), brightness: Brightness.dark),
+      useMaterial3: true,
+    ),
+    themeMode: ThemeMode.light,
     initialRoute: '/',
     getPages: [
       GetPage(

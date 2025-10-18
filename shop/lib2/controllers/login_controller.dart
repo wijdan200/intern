@@ -83,7 +83,7 @@ class LoginController extends GetxController {
     // Simple authentication logic (in real app, this would be API call)
     if (role == 'Customer' && 
                emailController.text == 'customer@bagshop.com' && 
-               passwordController.text == 'customer123') {
+               passwordController.text == '123456') {
       Get.snackbar(
         'Success',
         'Welcome Customer!',
@@ -95,7 +95,7 @@ class LoginController extends GetxController {
       Get.offAllNamed('/customer-home'); // Navigate to customer home
     } else if (role == 'Admin' && 
                emailController.text == 'admin@bagshop.com' && 
-               passwordController.text == 'admin123') {
+               passwordController.text == '123456') {
       Get.snackbar(
         'Success',
         'Welcome Admin!',
@@ -108,7 +108,7 @@ class LoginController extends GetxController {
     } else {
       Get.snackbar(
         'Error',
-        'Invalid credentials. Try: customer@bagshop.com / customer123 or admin@bagshop.com / admin123',
+        'Invalid credentials. Try: customer@bagshop.com / 123456 or admin@bagshop.com / 123456',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.red,
         colorText: Colors.white,
@@ -222,36 +222,36 @@ class LoginController extends GetxController {
             const SizedBox(height: 16),
             
             // Demo credentials info
-            Container(
-              padding: const EdgeInsets.all(12),
-              decoration: BoxDecoration(
-                color: Colors.blue.shade50,
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: Colors.blue.shade200),
-              ),
-              child: Column(
-                children: [
-                  const Text(
-                    'Demo Credentials:',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.blue,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    role == 'Customer' 
-                        ? 'Email: customer@bagshop.com\nPassword: customer123'
-                        : 'Email: admin@bagshop.com\nPassword: admin123',
-                    style: const TextStyle(
-                      fontSize: 12,
-                      color: Colors.blue,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ],
-              ),
-            ),
+            // Container(
+            //   padding: const EdgeInsets.all(12),
+            //   decoration: BoxDecoration(
+            //     color: Colors.blue.shade50,
+            //     borderRadius: BorderRadius.circular(8),
+            //     border: Border.all(color: Colors.blue.shade200),
+            //   ),
+              // child: Column(
+                // children: [
+                //   const Text(
+                //     'Demo Credentials:',
+                //     style: TextStyle(
+                //       fontWeight: FontWeight.bold,
+                //       color: Colors.blue,
+                //     ),
+                //   ),
+                //   const SizedBox(height: 4),
+                //   Text(
+                //     role == 'Customer' 
+                //         ? 'Email: customer@bagshop.com\nPassword: customer123'
+                //         : 'Email: admin@bagshop.com\nPassword: admin123',
+                //     style: const TextStyle(
+                //       fontSize: 12,
+                //       color: Colors.blue,
+                //     ),
+                //     textAlign: TextAlign.center,
+                //   ),
+              // ],
+            //   ),
+            // ),
             
             const SizedBox(height: 16),
             

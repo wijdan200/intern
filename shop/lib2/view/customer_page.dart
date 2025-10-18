@@ -12,7 +12,7 @@ class CustomerPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('BagiShop - Products'),
+        title: const Text('Shop - Products'),
         backgroundColor: const Color(0xFF6A4C93),
         foregroundColor: Colors.white,
         actions: [
@@ -157,7 +157,7 @@ class ProductCard extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.star,
-                          color: Colors.amber[600],
+                          color: const Color.fromARGB(255, 109, 174, 223),
                           size: 16,
                         ),
                         const SizedBox(width: 4),
