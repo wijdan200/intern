@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop/controllers/splash_controller.dart';
+import '../controllers/splash_controller.dart';
 
 class SplashView extends StatelessWidget {
   const SplashView({super.key});
@@ -37,18 +37,7 @@ class SplashView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Text(
-                'Your Ultimate Shopping Experience',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white70,
-                ),
-              ),
-              SizedBox(height: 40),
-              CircularProgressIndicator(
-                valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-                strokeWidth: 2,
-              ),
+             
             ],
           ),
         ),

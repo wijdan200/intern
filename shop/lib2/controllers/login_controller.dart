@@ -19,6 +19,18 @@ class LoginController extends GetxController {
     isPasswordVisible.value = !isPasswordVisible.value;
   }
 
+  void enterAsCustomer() {
+    Get.snackbar(
+      'Welcome!',
+      'Entering as Customer - No login required',
+      snackPosition: SnackPosition.BOTTOM,
+      backgroundColor: const Color(0xFF6A4C93),
+      colorText: Colors.white,
+    );
+    // Navigate to customer home page or shopping area
+    // Get.offAllNamed('/customer-home');
+  }
+
   bool validateInputs(String email, String password) {
     if (email.isEmpty || password.isEmpty) {
       Get.snackbar(
@@ -69,21 +81,19 @@ class LoginController extends GetxController {
     isLoading.value = false;
 
     // Simple authentication logic (in real app, this would be API call)
-    // if (role == 'Customer' && 
-    //     emailController.text == 'customer@bagshop.com' && 
-    //     passwordController.text == 'customer123') {
-    //   Get.snackbar(
-    //     'Success',
-    //     'Welcome Customer!',
-    //     snackPosition: SnackPosition.BOTTOM,
-    //     backgroundColor: const Color(0xFF6A4C93),
-    //     colorText: Colors.white,
-    //   );
-    //   Get.back(); // Close bottom sheet
-    //   Get.offAllNamed('/home'); // Navigate to home
-    // } else 
-    
-    if (role == 'Admin' && 
+    if (role == 'Customer' && 
+               emailController.text == 'customer@bagshop.com' && 
+               passwordController.text == 'customer123') {
+      Get.snackbar(
+        'Success',
+        'Welcome Customer!',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: const Color(0xFF6A4C93),
+        colorText: Colors.white,
+      );
+      Get.back(); // Close bottom sheet
+      Get.offAllNamed('/customer-home'); // Navigate to customer home
+    } else if (role == 'Admin' && 
                emailController.text == 'admin@bagshop.com' && 
                passwordController.text == 'admin123') {
       Get.snackbar(

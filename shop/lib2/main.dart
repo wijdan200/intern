@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop/view/spalshveiw.dart';
-import 'package:shop/view/loginu.dart';
-import 'package:shop/controllers/splash_controller.dart';
-import 'package:shop/controllers/login_controller.dart';
+import 'view/spalshveiw.dart';
+import 'view/loginu.dart';
+import 'view/customer_page.dart';
+import 'view/product_details_page.dart';
+import 'controllers/splash_controller.dart';
+import 'controllers/login_controller.dart';
+import 'controllers/product_controller.dart';
+import 'services/api_service.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,6 +34,18 @@ void main() {
         binding: BindingsBuilder(() {
           Get.put(LoginController());
         }),
+      ),
+      GetPage(
+        name: '/customer-home', 
+        page: () => const CustomerPage(),
+        binding: BindingsBuilder(() {
+          Get.put(ApiService());
+          Get.put(ProductController());
+        }),
+      ),
+      GetPage(
+        name: '/product-details', 
+        page: () => const ProductDetailsPage(),
       ),
     ],
   ));

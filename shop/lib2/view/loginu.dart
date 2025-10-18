@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop/controllers/login_controller.dart';
+
+
+import '../controllers/login_controller.dart';
 
 class LoginUser extends StatelessWidget {
   const LoginUser({super.key});
@@ -23,7 +25,7 @@ class LoginUser extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: const Color(0xFF6A4C93).withOpacity(0.1),
+                    color: const Color(0xFF6A4C93).withValues(alpha: 0.1),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
