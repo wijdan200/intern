@@ -18,7 +18,7 @@ class CustomerPage extends StatelessWidget {
        
           leading: IconButton(
           icon: const Icon(Icons.arrow_back),
-          onPressed: () => Get.back(),
+          onPressed: () => Get.toNamed('/loginu'),
         ),
        
       ),

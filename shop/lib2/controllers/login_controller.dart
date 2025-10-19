@@ -22,7 +22,7 @@ class LoginController extends GetxController {
   void enterAsCustomer() {
     Get.snackbar(
       'Welcome!',
-      'Entering as Customer - No login required',
+      'Entering as Customer ',
       snackPosition: SnackPosition.BOTTOM,
       backgroundColor: const Color(0xFF6A4C93),
       colorText: Colors.white,
@@ -82,7 +82,7 @@ class LoginController extends GetxController {
 
     // Simple authentication logic (in real app, this would be API call)
     if (role == 'Customer' && 
-               emailController.text == 'customer@bagshop.com' && 
+               emailController.text == 'customer@shop.com' && 
                passwordController.text == '123456') {
       Get.snackbar(
         'Success',
@@ -94,7 +94,7 @@ class LoginController extends GetxController {
       Get.back(); // Close bottom sheet
       Get.offAllNamed('/customer-home'); // Navigate to customer home
     } else if (role == 'Admin' && 
-               emailController.text == 'admin@bagshop.com' && 
+               emailController.text == 'admin@shop.com' && 
                passwordController.text == '123456') {
       Get.snackbar(
         'Success',
@@ -103,12 +103,12 @@ class LoginController extends GetxController {
         backgroundColor: const Color(0xFFB8860B),
         colorText: Colors.white,
       );
-      Get.back(); // Close bottom sheet
-      Get.offAllNamed('/admin-dashboard'); // Navigate to admin dashboard
+      Get.back();
+      Get.offAllNamed('/admin-dashboard'); 
     } else {
       Get.snackbar(
         'Error',
-        'Invalid credentials. Try: customer@bagshop.com / 123456 or admin@bagshop.com / 123456',
+        'Invalid credentials. Try: customer@shop.com / 123456 or admin@shop.com / 123456',
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.red,
         colorText: Colors.white,
@@ -135,7 +135,7 @@ class LoginController extends GetxController {
               width: 40,
               height: 4,
               decoration: BoxDecoration(
-                color: Colors.grey.shade300,
+                color: const Color.fromARGB(255, 232, 198, 198),
                 borderRadius: BorderRadius.circular(2),
               ),
             ),
@@ -161,7 +161,7 @@ class LoginController extends GetxController {
                   borderRadius: BorderRadius.circular(12),
                 ),
                 filled: true,
-                fillColor: Colors.grey.shade50,
+                fillColor: const Color.fromARGB(255, 218, 189, 189),
               ),
             ),
             
@@ -190,14 +190,14 @@ class LoginController extends GetxController {
             
             const SizedBox(height: 24),
             
-            // Login Button
+         
             Obx(() => SizedBox(
               width: double.infinity,
               height: 50,
               child: ElevatedButton(
                 onPressed: isLoading.value ? null : () => performLogin(role),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: role == 'Customer' ? const Color(0xFF6A4C93) : const Color(0xFFB8860B),
+                  backgroundColor: role == 'Customer' ? const Color(0xFF6A4C93) : const Color.fromARGB(255, 90, 141, 230),
                   foregroundColor: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -219,43 +219,9 @@ class LoginController extends GetxController {
               ),
             )),
             
-            const SizedBox(height: 16),
+             const SizedBox(height: 16),
             
-            // Demo credentials info
-            // Container(
-            //   padding: const EdgeInsets.all(12),
-            //   decoration: BoxDecoration(
-            //     color: Colors.blue.shade50,
-            //     borderRadius: BorderRadius.circular(8),
-            //     border: Border.all(color: Colors.blue.shade200),
-            //   ),
-              // child: Column(
-                // children: [
-                //   const Text(
-                //     'Demo Credentials:',
-                //     style: TextStyle(
-                //       fontWeight: FontWeight.bold,
-                //       color: Colors.blue,
-                //     ),
-                //   ),
-                //   const SizedBox(height: 4),
-                //   Text(
-                //     role == 'Customer' 
-                //         ? 'Email: customer@bagshop.com\nPassword: customer123'
-                //         : 'Email: admin@bagshop.com\nPassword: admin123',
-                //     style: const TextStyle(
-                //       fontSize: 12,
-                //       color: Colors.blue,
-                //     ),
-                //     textAlign: TextAlign.center,
-                //   ),
-              // ],
-            //   ),
-            // ),
-            
-            const SizedBox(height: 16),
-            
-            // Close Button
+         
             TextButton(
               onPressed: () {
                 Get.back();

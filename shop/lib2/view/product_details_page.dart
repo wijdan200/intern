@@ -12,7 +12,7 @@ class ProductDetailsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Product Details'),
-        backgroundColor: const Color(0xFF6A4C93),
+        backgroundColor: const Color.fromARGB(255, 159, 136, 191),
         foregroundColor: Colors.white,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
@@ -25,7 +25,7 @@ class ProductDetailsPage extends StatelessWidget {
           
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Product Image
+          
             Container(
               width: double.infinity,
               height: 300,
@@ -81,7 +81,7 @@ class ProductDetailsPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   
-                  // Rating
+                
                   Row(
                     children: [
                       Icon(

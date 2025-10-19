@@ -31,6 +31,19 @@ class SplashView extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10),
+            //  ElevatedButton.icon(
+            //   icon: Icon(Icons.brightness_6),
+            //   label: Text('Change_Theme'.tr),
+            //   style: ElevatedButton.styleFrom(
+            //     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            //     textStyle: TextStyle(fontSize: 18),
+            //   ),
+            //   onPressed: () {
+            //     Get.changeThemeMode(
+            //       Get.isDarkMode ? ThemeMode.light : ThemeMode.dark,
+            //     );
+            //   },
+            // ), 
             ],
           ),
         ),

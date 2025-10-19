@@ -4,6 +4,7 @@ import 'view/spalshveiw.dart';
 import 'view/loginu.dart';
 import 'view/customer_page.dart';
 import 'view/product_details_page.dart';
+import 'view/admin_dashboard.dart';
 import 'controllers/splash_controller.dart';
 import 'controllers/login_controller.dart';
 import 'controllers/product_controller.dart';
@@ -15,14 +16,8 @@ void main() {
   runApp(GetMaterialApp(
     title: 'Shop',
     debugShowCheckedModeBanner: false,
-    theme: ThemeData.light().copyWith(
-      colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6A4C93)),
-      useMaterial3: true,
-    ),
-    darkTheme: ThemeData.dark().copyWith(
-      colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6A4C93), brightness: Brightness.dark),
-      useMaterial3: true,
-    ),
+    theme: ThemeData.light(),
+    darkTheme: ThemeData.dark(),
     themeMode: ThemeMode.light,
     initialRoute: '/',
     getPages: [
@@ -51,6 +46,10 @@ void main() {
       GetPage(
         name: '/product-details', 
         page: () => const ProductDetailsPage(),
+      ),
+      GetPage(
+        name: '/admin-dashboard', 
+        page: () => const AdminDashboard(),
       ),
     ],
   ));
