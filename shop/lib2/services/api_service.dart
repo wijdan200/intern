@@ -25,7 +25,7 @@ class ApiService extends GetConnect {
     }
   }
 
-  // Get single product by ID
+// product by ID
   Future<Product> getProduct(int id) async {
     try {
       final response = await get('/products/$id');

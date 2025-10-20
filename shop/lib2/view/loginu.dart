@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controllers/login_controller.dart';
+import '../controllers/session_service.dart';
 
 class LoginUser extends StatelessWidget {
   const LoginUser({super.key});
@@ -63,8 +64,13 @@ class LoginUser extends StatelessWidget {
                     width: 150,
                     height: 60,
                     child: ElevatedButton(
-                      onPressed: () {
-                        controller.showLoginForm(context, 'Customer');
+                      onPressed: () async {
+                        final session = Get.find<SessionService>();
+                        if (session.isCustomer) {
+                          Get.offAllNamed('/customer-home');
+                        } else {
+                          controller.showLoginForm(context, 'Customer');
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(
@@ -102,8 +108,13 @@ class LoginUser extends StatelessWidget {
                     width: 150,
                     height: 60,
                     child: ElevatedButton(
-                      onPressed: () {
-                        controller.showLoginForm(context, 'Admin');
+                      onPressed: () async {
+                        final session = Get.find<SessionService>();
+                        if (session.isAdmin) {
+                          Get.offAllNamed('/admin-dashboard');
+                        } else {
+                          controller.showLoginForm(context, 'Admin');
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromARGB(

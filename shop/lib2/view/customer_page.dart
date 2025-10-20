@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/product_controller.dart';
+import '../controllers/session_service.dart';
 import '../models/product.dart';
 
 class CustomerPage extends StatelessWidget {
@@ -15,12 +16,27 @@ class CustomerPage extends StatelessWidget {
         title: const Text('Shop - Products'),
         backgroundColor: const Color(0xFF6A4C93),
         foregroundColor: Colors.white,
-       
-          leading: IconButton(
+        leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () => Get.toNamed('/loginu'),
         ),
-       
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.logout),
+            onPressed: () async {
+              final session = Get.find<SessionService>();
+              await session.logout();
+              Get.offAllNamed('/loginu');
+              Get.snackbar(
+                'Logged Out',
+                'You have been logged out successfully',
+                snackPosition: SnackPosition.BOTTOM,
+                backgroundColor: const Color(0xFF6A4C93),
+                colorText: Colors.white,
+              );
+            },
+          ),
+        ],
       ),
       body: Obx(() {
         if (controller.isLoading.value) {

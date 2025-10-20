@@ -9,6 +9,8 @@ import 'controllers/splash_controller.dart';
 import 'controllers/login_controller.dart';
 import 'controllers/product_controller.dart';
 import 'services/api_service.dart';
+import 'controllers/session_service.dart';
+import 'controllers/auth_midlleware.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,6 +22,9 @@ void main() {
     darkTheme: ThemeData.dark(),
     themeMode: ThemeMode.light,
     initialRoute: '/',
+    initialBinding: BindingsBuilder(() {
+      Get.put(SessionService());
+    }),
     getPages: [
       GetPage(
         name: '/', 
@@ -42,10 +47,12 @@ void main() {
           Get.put(ApiService());
           Get.put(ProductController());
         }),
+        middlewares: [CustomerOnlyMiddleware()],
       ),
       GetPage(
         name: '/product-details', 
         page: () => const ProductDetailsPage(),
+        middlewares: [CustomerOnlyMiddleware()],
       ),
       GetPage(
         name: '/admin-dashboard', 

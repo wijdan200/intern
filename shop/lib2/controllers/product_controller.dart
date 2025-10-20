@@ -21,8 +21,8 @@ class ProductController extends GetxController {
       isLoading.value = true;
       error.value = '';
       
-      final fetchedProducts = await _apiService.getProducts();
-      products.value = fetchedProducts;
+      final fetchedProducts = await _apiService.getProducts(); //geeet the products
+      products.value = fetchedProducts; //رح يخزنها بهاد الvariable
     } catch (e) {
       error.value = e.toString();
       Get.snackbar(
